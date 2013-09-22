@@ -1,0 +1,52 @@
+#wrapper {
+	margin: 2rem;
+}
+
+#title, #login, #name, #logout {
+	padding: .5rem;
+	vertical-align: bottom;
+}
+
+#title {
+	background-color: #000;
+	color: #fff;
+	border: 1px solid #000;
+}
+
+#login, #name, #logout {
+	border: 1px dashed #000;
+	margin-left: -1px;
+	color: #000;
+}
+
+#logout a {
+	color: #000;
+}
+
+a {
+	color: inherit;
+}
+
+#projects table {
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 0.75rem;
+	background: #fff;
+	width: 100%;
+	border-collapse: collapse;
+	text-align: left;
+	margin-bottom: 1.5rem;
+}
+
+#projects th {
+	font-size: .875rem;
+	font-weight: normal;
+	color: #333;
+	border-bottom: 2px solid #666;
+	padding: .625rem .5rem;
+}
+
+#projects td {
+	border-bottom: 1px solid #ccc;
+	color: #666;
+	padding: .375rem .5rem;
+}

@@ -1,0 +1,12 @@
+{% extends "_layout.html" %}
+{% block body %}
+{% include "_top.html" %}
+<section id="new-project">
+<form method="post" action="{{ url_for('new_project') }}">
+<input type="hidden" name="_csrf_token" value="{{ csrf_token() }}" />
+<p>You will not have much to type; here we are going to offload all the extra information to the other project listing.</p>
+Project Name: <input type="text" name="project_name" />
+<input type="submit" />
+</form>
+</section>
+{% endblock %}

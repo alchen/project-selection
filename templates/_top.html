@@ -1,0 +1,28 @@
+<header>
+	<span id="title">Select Your Project(s)</span>
+	<span id="name">@{{ current_user.name }}</span><span id="logout"><a href="{{ url_for('logout') }}">log out</a></span>
+	<p>Assign projects with the <a href="http://en.wikipedia.org/wiki/Hungarian_algorithm">Hungarian algorithm</a>.</p>
+</header>
+<section id="options">
+	<header>
+		Choose a course of action:
+	</header>
+	<ul>
+		<li><a href="{{ url_for('new_project') }}">Add a project</a></li>
+		<li><a href="{{ url_for('set_priorities') }}">Select priorities for projects</a></li>
+		<li><a href="{{ url_for('assign_projects') }}">Update project assignments</a></li>
+		<li><a href="{{ url_for('logout') }}">Log out</a></li>
+	</ul>
+</section>
+<section id="flash">
+	{% with messages = get_flashed_messages() %}
+	{% if messages %}
+	<p>And,</p>
+	<ul>
+		{% for message in messages %}
+		<li>{{ message }}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	{% endwith %}
+</section>
