@@ -5,26 +5,26 @@
 <form method="post" action="{{ url_for('set_priorities') }}">
 <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}" />
 <table>
-	<thead>
-		<tr>
-			<th scope="col" data-sort="string">Project</th>
-			<th scope="col" data-sort="int">Priority</th>
-		</tr>
-	</thead>
-	<tbody>
-		{% for project in projects %}
-		<tr>
-			<td>{{ project.name }}</td>
-			<td><select name="project_{{ project.id }}" clas="project-priority">
-					<option value="0">-</option>
-					{% for i in range(1, num_projects) -%}
-					<option value="{{ i }}"{% if project.priority == i %} selected="selected"{% endif %}>{{ i }}</option>
-					{% endfor %}
-				</select>
-			</td>
-		</tr>
-		{% endfor %}
-	</tbody>
+  <thead>
+    <tr>
+      <th scope="col" data-sort="string">Project</th>
+      <th scope="col" data-sort="int">Priority</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for project in projects %}
+    <tr>
+      <td>{{ project.name }}</td>
+      <td><select name="project_{{ project.id }}" clas="project-priority">
+          <option value="0">-</option>
+          {% for i in range(1, num_projects) -%}
+          <option value="{{ i }}"{% if project.priority == i %} selected="selected"{% endif %}>{{ i }}</option>
+          {% endfor %}
+        </select>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
 </table>
 <input type="submit" />
 </form>

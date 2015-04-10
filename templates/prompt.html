@@ -1,25 +1,25 @@
 {% extends "_layout.html" %}
 {% block body %}
 <header>
-	<span id="title">Select Your Project(s)</span><a href="{{ url_for('login') }}" id="login">Sign in with Twitter</a>
-	<p>Assign projects with the <a href="http://en.wikipedia.org/wiki/Hungarian_algorithm">Hungarian algorithm</a>.</p>
+  <span id="title">Select Your Project(s)</span><a href="{{ url_for('login') }}" id="login">Sign in with Twitter</a>
+  <p>Assign projects with the <a href="http://en.wikipedia.org/wiki/Hungarian_algorithm">Hungarian algorithm</a>.</p>
 </header>
 <section id="projects">
 <table>
-	<thead>
-		<tr>
-			<th scope="col" data-sort="string">Project</th>
-			<th scope="col" data-sort="string">Assigned To</th>
-		</tr>
-	</thead>
-	<tbody>
-		{% for project in projects %}
-		<tr>
-			<td>{{ project.name }}</td>
-			<td>{{ project.assignee if project.assignee is not none else '-' }}</td>
-		</tr>
-		{% endfor %}
-	</tbody>
+  <thead>
+    <tr>
+      <th scope="col" data-sort="string">Project</th>
+      <th scope="col" data-sort="string">Assigned To</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for project in projects %}
+    <tr>
+      <td>{{ project.name }}</td>
+      <td>{{ project.assignee if project.assignee is not none else '-' }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
 </table>
 </section>
 {% endblock %}

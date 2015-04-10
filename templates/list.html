@@ -3,22 +3,22 @@
 {% include "_top.html" %}
 <section id="projects">
 <table>
-	<thead>
-		<tr>
-			<th scope="col" data-sort="string">Project</th>
-			<th scope="col" data-sort="int">Priority (Yours)</th>
-			<th scope="col" data-sort="string">Assigned To</th>
-		</tr>
-	</thead>
-	<tbody>
-		{% for project in projects %}
-		<tr>
-			<td>{{ project.name }}</td>
-			<td>{{ project.priority if project.priority is not none else '-' }}</td>
-			<td>{{ project.assignee if project.assignee is not none else '-' }}</td>
-		</tr>
-		{% endfor %}
-	</tbody>
+  <thead>
+    <tr>
+      <th scope="col" data-sort="string">Project</th>
+      <th scope="col" data-sort="int">Priority (Yours)</th>
+      <th scope="col" data-sort="string">Assigned To</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for project in projects %}
+    <tr>
+      <td>{{ project.name }}</td>
+      <td>{{ project.priority if project.priority is not none else '-' }}</td>
+      <td>{{ project.assignee if project.assignee is not none else '-' }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
 </table>
 </section>
 {% endblock %}
